@@ -23,8 +23,8 @@
 ;procedure (+ test-divisor 1) of (find-divisor n (+ test-divisor 1)) executes only with 1 step. But with this approach we need to calculare all (square n) for find-divisor
 
 ;procedure (next test-divisor) of (find-divisor n (next test-divisor)) calculates even? and sum procedures,
-;what takes us one additional step(calculate condition, calcualte independent expression). There we need to calculate (/ (square n) 2) numbers,
-;but else expression requires 2 times more calculations than just (+ test-divisor 1).
+;what takes us one additional step(calculate condition, calculate dependent expression). There we need to calculate (/ (square n) 2) numbers,
+;but also expression requires 2 times more calculations than just (+ test-divisor 1).
 
 (define (prime? a)
   (= a (smallest-divisor a)))
