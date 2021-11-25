@@ -24,26 +24,24 @@
   (try-it (+ 1 (random (- n 1)))))
 
 (define (fast-prime? n times)
-  (cond ((= times 0) (display " is prime based on Miller-Rabin's test"))
+  (cond ((= times 0) true)
         ((miller-rabin-test n) (fast-prime? n (- times 1)))
-        (else (display " isn't prime based on Miller-Rabin's test"))))
+        (else false)))
 
 (define (prime? n)
-  (display n)
-  (fast-prime? n times-to-test)
-  (newline))
+  (fast-prime? n times-to-test))
 
-(prime? 561)
-(prime? 1105)
-(prime? 1729)
-(prime? 2465)
-(prime? 2821)
-(prime? 6601)
-(prime? 1009)
-(prime? 11)
-(prime? 10037)
-(prime? 100003)
-
+;(prime? 561)
+;(prime? 1105)
+;(prime? 1729)
+;(prime? 2465)
+;(prime? 2821)
+;(prime? 6601)
+;(prime? 1009)
+;(prime? 11)
+;(prime? 10037)
+;(prime? 100003)
+;
 ;Result
 ;561 isn't prime based on Miller-Rabin's test
 ;1105 isn't prime based on Miller-Rabin's test
